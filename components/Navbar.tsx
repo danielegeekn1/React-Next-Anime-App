@@ -1,10 +1,11 @@
+import { mangaAndAnimeMenuTitles } from "@/constants";
+
 const Navbar = () => {
 	return (
 		<ul className="flex justify-between items-center m-[3rem] font-bold">
-			<li>Anime</li>
-			<li>Manga</li>
-			<li>Last Updates</li>
-			<li>Gudgets</li>
+			{mangaAndAnimeMenuTitles.map((animeOrManga) => (
+				<li key={animeOrManga.id}>{animeOrManga.mangaAndAnimeMenuTitle}</li>
+			))}
 		</ul>
 	);
 };
