@@ -7,11 +7,11 @@ export default function Home() {
 		<main>
 			<h1>Main Anime App</h1>
 			<div className="_mainpageApp flex flex-col">
-				<div className="_animeTopPageSection flex">
+				<div className="_animeTopPageSection flex justify-between">
 					<div className="_autosliderSection">
 						<AutoPlayingSlider />
 					</div>
-					<div className="_animeReccomendationsSection">
+					<div className="_animeReccomendationsSection ">
 						Anime Reccomendations Section
 					</div>
 				</div>
