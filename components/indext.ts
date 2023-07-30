@@ -1,2 +1,3 @@
 import Navbar from "./Navbar";
-export { Navbar };
+import AutoPlayingSlider from "./AutoPlayingSlider";
+export { Navbar, AutoPlayingSlider };
