@@ -5,6 +5,7 @@ import {
 	mangaAndAnimeMenuTitles,
 	mangaMenuTitlesChoices,
 } from "@/constants";
+import Link from "next/link";
 
 const Navbar = () => {
 	const [selectedMenus, setSelectedMenus] = useState({
@@ -34,7 +35,9 @@ const Navbar = () => {
 						selectedMenus.anime && (
 							<ul className="absolute left-0 mt-2">
 								{animeMenuTitlesChoices.map((anime) => (
-									<li key={anime.id}>{anime.animeMenuListName}</li>
+									<Link href={anime.url}>
+										<li key={anime.id}>{anime.animeMenuListName}</li>
+									</Link>
 								))}
 							</ul>
 						)}
@@ -42,7 +45,9 @@ const Navbar = () => {
 						selectedMenus.manga && (
 							<ul className="absolute left-[38rem] mt-2">
 								{mangaMenuTitlesChoices.map((manga) => (
-									<li key={manga.id}>{manga.mangaMenuListName}</li>
+									<Link href={manga.url}>
+										<li key={manga.id}>{manga.mangaMenuListName}</li>
+									</Link>
 								))}
 							</ul>
 						)}
