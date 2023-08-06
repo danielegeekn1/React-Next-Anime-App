@@ -26,31 +26,22 @@ const AutoPlayingSlider: React.FC<AutoPlayingSliderProps> = ({ animeData }) => {
 		};
 	}, [index]);
 	return (
-		<>
-			<div className="flex gap-[1.5rem]">
-				<div className="flex flex-[1]">
-					{animeData.map((animed, idx) => (
-						<div key={idx}>
-							{idx === index && (
-								<div>
-									<h4>{animed.title}</h4>
-									<img
-										src={animed.images.jpg.large_image_url}
-										alt="anime image for slider section"
-									/>
-									<h5>Released in year {animed.year}</h5>
-								</div>
-							)}
+		<div>
+			{animeData.map((animed, idx) => (
+				<div key={idx}>
+					{idx === index && (
+						<div>
+							<h4>{animed.title}</h4>
+							<img
+								src={animed.images.jpg.large_image_url}
+								alt="anime image for slider section"
+							/>
+							<h5>Released in year {animed.year}</h5>
 						</div>
-					))}
+					)}
 				</div>
-				<div className="flex flex-col flex-[1]">
-					{animeData.map((animed) => (
-						<h4>{animed.title}</h4>
-					))}
-				</div>
-			</div>
-		</>
+			))}
+		</div>
 	);
 };
 
