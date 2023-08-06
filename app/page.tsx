@@ -14,20 +14,23 @@ export default function Home() {
 	console.log("passed anime data", animeData);
 	return (
 		<main>
-			<div className="_mainpageApp flex flex-col">
-				<div className="_animeTopPageSection flex justify-between ">
-					<div className="_autosliderSection flex flex-[3] bg-[green]">
+			<div className="_mainpageApp flex flex-col h-[100vh] w-[100vw]">
+				<div className="_animeTopPageSection flex justify-between flex-[1] ">
+					<div className="_autosliderSection flex flex-[2] border-[2px] border-[red]">
 						<AutoPlayingSlider animeData={animeData} />
 					</div>
-					<div className="_animeReccomendationsSection flex flex-[1] bg-[blue]">
+					<div className="_animeReccomendationsSection flex flex-[1] border-[2px] border-[blue]">
 						Anime Reccomendations Section
 					</div>
 				</div>
 
-				<div className="_animeListSection">Anime List Section</div>
-				<div className="_animeNewsSection">Anime News Section</div>
+				<div className="_animeListSection flex flex-[1] border-[2px] border-[green]">
+					Anime List Section
+				</div>
+				<div className="_animeNewsSection flex flex-[1] border-[2px] border-[orange]">
+					Anime News Section
+				</div>
 			</div>
-			<button onClick={() => fetchAnime()}>fetch anime</button>
 		</main>
 	);
 }
