@@ -1,4 +1,5 @@
 import { animeDataProps } from "@/types";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 type AutoPlayingSliderProps = {
@@ -26,17 +27,22 @@ const AutoPlayingSlider: React.FC<AutoPlayingSliderProps> = ({ animeData }) => {
 		};
 	}, [index]);
 	return (
-		<div>
+		<div className="w-[70%] h-[100%] border-[3px] border-[yellow] flex flex-col">
 			{animeData.map((animed, idx) => (
 				<div key={idx}>
 					{idx === index && (
-						<div>
-							<h4>{animed.title}</h4>
-							<img
-								src={animed.images.jpg.large_image_url}
-								alt="anime image for slider section"
-							/>
-							<h5>Released in year {animed.year}</h5>
+						<div className="flex flex-col">
+							<h4 className="flex flex-[1]">{animed.title}</h4>
+							<Link href={`/animeinformations/${animed.mal_id}`}>
+								<img
+									src={animed.images.jpg.image_url}
+									alt="anime image for slider section"
+									className="flex flex-[2] border-[2px] border-[purple] "
+								/>
+								<h5 className="flex flex-[1]">
+									Released in year {animed.year}
+								</h5>
+							</Link>
 						</div>
 					)}
 				</div>
