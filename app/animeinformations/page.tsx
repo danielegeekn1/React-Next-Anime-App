@@ -1,6 +1,7 @@
 "use client";
 import { animeDataProps } from "@/types";
 import { fetchAnime } from "@/utils/FetchFromApi";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const page = () => {
@@ -16,8 +17,10 @@ const page = () => {
 			{animeData.map((anime, idx) => (
 				<div className="flex flex-col flex-[30%]" key={idx}>
 					<h1>{anime.title}</h1>
-					<img src={anime.images.jpg.image_url} alt="anime info image url" />
-					<p>{anime.synopsis}</p>
+					<Link href={`/animeinformations/${anime.mal_id}`}>
+						<img src={anime.images.jpg.image_url} alt="anime info image url" />
+						<p>{anime.synopsis}</p>
+					</Link>
 				</div>
 			))}
 		</div>

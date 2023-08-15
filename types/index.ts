@@ -3,9 +3,12 @@ export interface animeDataProps {
 	duration: string;
 	background: string;
 	synopsis: string;
+	status: string;
 	mal_id: number;
 	year: number;
 	episodes: number;
+	aired: animeAiringInfoProps;
+	trailer: animeTrailerProps;
 	images: animeImagesProps;
 }
 export interface animeImagesProps {
@@ -14,4 +17,11 @@ export interface animeImagesProps {
 export interface image_urlProps {
 	image_url: string;
 	large_image_url: string;
+}
+export interface animeTrailerProps {
+	url: string;
+}
+export interface animeAiringInfoProps {
+	from: string;
+	to: string;
 }
