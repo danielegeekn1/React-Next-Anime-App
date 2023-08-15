@@ -27,7 +27,7 @@ const AutoPlayingSlider: React.FC<AutoPlayingSliderProps> = ({ animeData }) => {
 		};
 	}, [index]);
 	return (
-		<div className="w-[80%] h-[100%] border-[3px] border-[grey]">
+		<div className="w-[100%] h-[100%] border-[3px] border-[grey]">
 			{animeData.map((animed, idx) => (
 				<div key={idx}>
 					{idx === index && (
