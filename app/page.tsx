@@ -1,10 +1,10 @@
 "use client";
 import AutoPlayingSlider from "@/components/AutoPlayingSlider";
+import { animeDataProps } from "@/types";
 import { fetchAnime } from "@/utils/FetchFromApi";
 import { useEffect, useState } from "react";
-
 export default function Home() {
-	const [animeData, setAnimeData] = useState([]);
+	const [animeData, setAnimeData] = useState<animeDataProps[]>([]);
 	useEffect(() => {
 		fetchAnime().then((data) => {
 			let animeDataToPass = data.data;
@@ -14,7 +14,7 @@ export default function Home() {
 	console.log("passed anime data", animeData);
 	return (
 		<main>
-			<div className="_mainpageApp flex flex-col h-[90vh] w-[80vw] border-[3px]">
+			<div className="_mainpageApp flex flex-col h-[200vh] w-[100vw] border-[3px]">
 				<div className="_animeTopPageSection flex justify-between flex-[1] ">
 					<div className="_autosliderSection flex flex-[2] border-[2px] border-[red]">
 						<AutoPlayingSlider animeData={animeData} />
