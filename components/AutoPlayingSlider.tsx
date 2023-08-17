@@ -35,19 +35,16 @@ const AutoPlayingSlider: React.FC<AutoPlayingSliderProps> = ({ animeData }) => {
 						className={`absolute top-[1.5rem] left-0 w-[90%] h-[90%] ${
 							idx === index ? "block" : "hidden"
 						}`}
-						style={{
-							objectFit: "cover",
-						}}
 					>
 						<div className="flex flex-col border-[3px] border-[yellow] h-full w-full">
-							<h4 className="flex flex-[25%]">{animed.title}</h4>
+							<h4 className="flex flex-[15%]">{animed.title}</h4>
 							<Link href={`/animeinformations/${animed.mal_id}`}>
 								<img
 									src={animed.images.jpg.image_url}
 									alt="anime image for slider section"
-									className="border-[2px] border-[purple] flex flex-[50%]"
+									className="border-[2px] border-[purple] flex flex-[65%]"
 								/>
-								<h5 className="flex flex-[25%]">
+								<h5 className="flex flex-[20%]">
 									Released in year {animed.year}
 								</h5>
 							</Link>
@@ -64,7 +61,10 @@ const AutoPlayingSlider: React.FC<AutoPlayingSliderProps> = ({ animeData }) => {
 				))}
 			</div>
 
-			<div className="flex flex-[1] flex-col overflow-y-scroll">
+			<div
+				className="flex flex-[1] flex-col w-full h-full"
+				style={{ overflowY: "auto" }}
+			>
 				{animeData.map((animei, idx) => (
 					<p key={idx}>{animei.title}</p>
 				))}
