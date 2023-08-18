@@ -28,6 +28,12 @@ export async function fetchAnimeEpisodes(animeId: string) {
 	console.log("anime episodes res", res);
 	return res;
 }
+export async function fetchFullAnimeWithId(animeId: string) {
+	const animeFromIdData = await fetch(`${baseAnimeUrl}/${animeId}/full`);
+	const res = await animeFromIdData.json();
+	console.log("anime episodes res", res);
+	return res;
+}
 export async function fetchAnimePictures(animeId: string) {
 	const animePicturesData = await fetch(`${baseAnimeUrl}/${animeId}/pictures`);
 	const res = await animePicturesData.json();

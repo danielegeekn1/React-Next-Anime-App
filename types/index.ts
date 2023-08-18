@@ -32,3 +32,10 @@ export interface animeInfoProps {
 	_animeImage: string;
 	_animeId: string;
 }
+export interface animeTrailerDataProps {
+	trailer: animeTrailerProps;
+}
+export interface animeTrailerProps {
+	url: string;
+	youtube_id: string;
+}
