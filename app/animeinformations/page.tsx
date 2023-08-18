@@ -1,28 +1,27 @@
 "use client";
-import { animeDataProps } from "@/types";
-import { fetchAnime } from "@/utils/FetchFromApi";
-import Link from "next/link";
-import { useEffect, useState } from "react";
 
-const page = () => {
-	const [animeData, setAnimeData] = useState<animeDataProps[]>([]);
-	useEffect(() => {
-		fetchAnime().then((data) => {
-			let animeDataToPass = data.data;
-			setAnimeData(animeDataToPass);
-		});
-	}, []);
+import { animeInfoProps } from "@/types";
+import Link from "next/link";
+
+interface AnimeInfoComponentProps {
+	searchParams: animeInfoProps;
+}
+const page: React.FC<AnimeInfoComponentProps> = ({ searchParams }) => {
+	let _animeTitle = searchParams._animeTitle;
+	let _animeStatus = searchParams._animeStatus;
+	let _animeStory = searchParams._animeStory;
+	let _animeImage = searchParams._animeImage;
+	let _animeId = searchParams._animeId;
+	console.log("anime title", searchParams._animeTitle);
 	return (
-		<div className="flex justify-around flex-wrap gap-[0.5rem] border-[3px] border-[red]">
-			{animeData.map((anime, idx) => (
-				<div className="flex flex-col flex-[30%]" key={idx}>
-					<h1>{anime.title}</h1>
-					<Link href={`/animeinformations/${anime.mal_id}`}>
-						<img src={anime.images.jpg.image_url} alt="anime info image url" />
-						<p>{anime.synopsis}</p>
-					</Link>
-				</div>
-			))}
+		<div className="flex flex-col items-center border-[2px] border-[blue]">
+			<h2 className="font-bold">{_animeTitle}</h2>
+			<Link href={`/animeinformations/${_animeId}`}>
+				<img src={_animeImage} alt="animeimg" />
+				<p>{_animeStory}</p>
+			</Link>
+
+			<h4>{_animeStatus}</h4>
 		</div>
 	);
 };

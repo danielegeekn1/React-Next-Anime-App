@@ -25,3 +25,10 @@ export interface animeAiringInfoProps {
 	from: string;
 	to: string;
 }
+export interface animeInfoProps {
+	_animeTitle: string;
+	_animeStatus: string;
+	_animeStory: string;
+	_animeImage: string;
+	_animeId: string;
+}

@@ -36,17 +36,26 @@ const AutoPlayingSlider: React.FC<AutoPlayingSliderProps> = ({ animeData }) => {
 							idx === index ? "block" : "hidden"
 						}`}
 					>
-						<div className="flex flex-col border-[3px] border-[yellow] h-full w-full">
-							<h4 className="flex flex-[15%]">{animed.title}</h4>
-							<Link href={`/animeinformations/${animed.mal_id}`}>
+						<div className="flex flex-col items-center gap-[1.5rem] border-[3px] border-[yellow] h-full w-full">
+							<h4 className="flex font-bold">{animed.title}</h4>
+							<Link
+								href={{
+									pathname: "/animeinformations",
+									query: {
+										_animeTitle: animed.title,
+										_animeStatus: animed.status,
+										_animeStory: animed.synopsis,
+										_animeImage: animed.images.jpg.image_url,
+										_animeId: animed.mal_id,
+									},
+								}}
+							>
 								<img
 									src={animed.images.jpg.image_url}
 									alt="anime image for slider section"
-									className="border-[2px] border-[purple] flex flex-[65%]"
+									className="border-[2px] border-[purple] flex"
 								/>
-								<h5 className="flex flex-[20%]">
-									Released in year {animed.year}
-								</h5>
+								<h5 className="flex">Released in year {animed.year}</h5>
 							</Link>
 							<div className="flex flex-col border-[3px] border-[pink] ">
 								<h3>total episodes {animed.episodes}</h3>
@@ -66,7 +75,22 @@ const AutoPlayingSlider: React.FC<AutoPlayingSliderProps> = ({ animeData }) => {
 				style={{ overflowY: "auto" }}
 			>
 				{animeData.map((animei, idx) => (
-					<p key={idx}>{animei.title}</p>
+					<p key={idx} className="font-bold shadow-md">
+						<Link
+							href={{
+								pathname: "/animeinformations",
+								query: {
+									_animeTitle: animei.title,
+									_animeStatus: animei.status,
+									_animeStory: animei.synopsis,
+									_animeImage: animei.images.jpg.image_url,
+									_animeId: animei.mal_id,
+								},
+							}}
+						>
+							<h1>{animei.title}</h1>
+						</Link>
+					</p>
 				))}
 			</div>
 		</div>
