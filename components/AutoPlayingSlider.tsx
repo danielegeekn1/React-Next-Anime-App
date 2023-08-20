@@ -36,7 +36,7 @@ const AutoPlayingSlider: React.FC<AutoPlayingSliderProps> = ({ animeData }) => {
 							idx === index ? "block" : "hidden"
 						}`}
 					>
-						<div className="flex flex-col items-center gap-[1.5rem] border-[3px] border-[yellow] h-full w-full">
+						<div className="flex flex-col items-start gap-[1.5rem] border-[3px] border-[yellow] h-full w-full">
 							<h4 className="flex font-bold">{animed.title}</h4>
 							<Link
 								href={{
@@ -56,6 +56,7 @@ const AutoPlayingSlider: React.FC<AutoPlayingSliderProps> = ({ animeData }) => {
 									className="border-[2px] border-[purple] flex"
 								/>
 								<h5 className="flex">Released in year {animed.year}</h5>
+								<p> click here to see further information about this anime</p>
 							</Link>
 							<div className="flex flex-col items-center border-[3px] border-[pink] ">
 								<h3>total episodes {animed.episodes}</h3>
