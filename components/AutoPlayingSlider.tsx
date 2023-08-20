@@ -57,7 +57,7 @@ const AutoPlayingSlider: React.FC<AutoPlayingSliderProps> = ({ animeData }) => {
 								/>
 								<h5 className="flex">Released in year {animed.year}</h5>
 							</Link>
-							<div className="flex flex-col border-[3px] border-[pink] ">
+							<div className="flex flex-col items-center border-[3px] border-[pink] ">
 								<h3>total episodes {animed.episodes}</h3>
 								<h3>{animed.duration}</h3>
 								<h3>{animed.status}</h3>

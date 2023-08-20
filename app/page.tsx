@@ -1,4 +1,5 @@
 "use client";
+import AnimeReccomendations from "@/components/AnimeReccomendations";
 import AutoPlayingSlider from "@/components/AutoPlayingSlider";
 import { animeDataProps } from "@/types";
 import { fetchAnime } from "@/utils/FetchFromApi";
@@ -20,7 +21,7 @@ export default function Home() {
 						<AutoPlayingSlider animeData={animeData} />
 					</div>
 					<div className="_animeReccomendationsSection flex flex-[1] border-[2px] border-[blue]">
-						Anime Reccomendations Section
+						<AnimeReccomendations animeData={animeData} />
 					</div>
 				</div>
 

@@ -19,6 +19,7 @@ const page: React.FC<AnimeInfoComponentProps> = ({ searchParams }) => {
 			<Link href={`/animeinformations/${_animeId}`}>
 				<img src={_animeImage} alt="animeimg" />
 				<p>{_animeStory}</p>
+				<p>click to get the anime trailer</p>
 			</Link>
 
 			<h4>{_animeStatus}</h4>
