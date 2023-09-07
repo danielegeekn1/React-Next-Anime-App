@@ -9,10 +9,7 @@ const page = ({ params }: any) => {
 		useState<animeTrailerDataProps>();
 	let animeid = params.animeInfoId;
 	useEffect(() => {
-		fetchFullAnimeWithId(animeid).then((data) => {
-			let animeTrailerDataToPass = data.data;
-			setAnimeTrailerData(animeTrailerDataToPass);
-		});
+		fetchFullAnimeWithId(animeid).then((data) => setAnimeTrailerData(data));
 	}, [animeid]);
 	console.log("animetr", animeTrailerData?.trailer.url);
 	let _animeTrailer = animeTrailerData?.trailer.url;

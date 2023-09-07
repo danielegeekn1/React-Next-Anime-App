@@ -23,9 +23,20 @@ const AnimeReccomendations: React.FC<AutoPlayingSliderProps> = ({
 						alt="anime info img"
 						className="flex-[70%] bg-[red] "
 					/>
-					<Link href={`/animeinformations/${animeinfo.mal_id}`}>
+					<Link
+						href={{
+							pathname: "/animeinformations",
+							query: {
+								_animeTitle: animeinfo.title,
+								_animeStatus: animeinfo.status,
+								_animeStory: animeinfo.synopsis,
+								_animeImage: animeinfo.images.jpg.image_url,
+								_animeId: animeinfo.mal_id,
+							},
+						}}
+					>
 						<p className="flex-[15%] bg-[purple]">
-							click here to see this anime trailer
+							click here to learn more about this anime
 						</p>
 					</Link>
 				</div>

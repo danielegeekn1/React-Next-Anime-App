@@ -28,11 +28,21 @@ export async function fetchAnimeEpisodes(animeId: string) {
 	console.log("anime episodes res", res);
 	return res;
 }
+export async function fetchAnimeEpisodesVideos(animeId: string) {
+	const animeVideoEpisodeData = await fetch(
+		`${baseAnimeUrl}/${animeId}/episodes`
+	);
+	const res = await animeVideoEpisodeData.json();
+	console.log("anime episodes res", res);
+	return res;
+}
 export async function fetchFullAnimeWithId(animeId: string) {
 	const animeFromIdData = await fetch(`${baseAnimeUrl}/${animeId}/full`);
 	const res = await animeFromIdData.json();
-	console.log("anime episodes res", res);
-	return res;
+	let resData = res.data;
+	console.log("anime episodes res", resData);
+	//return res;
+	return resData;
 }
 export async function fetchAnimePictures(animeId: string) {
 	const animePicturesData = await fetch(`${baseAnimeUrl}/${animeId}/pictures`);

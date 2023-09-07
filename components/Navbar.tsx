@@ -26,7 +26,7 @@ const Navbar = () => {
 			<div className="relative flex justify-between m-[1rem]">
 				{mangaAndAnimeMenuTitles.map((animeMenuTitles) => (
 					<button
-						className="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center"
+						className="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center z-50"
 						onClick={() =>
 							setRelatedDropDownMenu(animeMenuTitles.mangaAndAnimeMenuTitle)
 						}
